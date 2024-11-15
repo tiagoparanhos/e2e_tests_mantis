@@ -36,17 +36,8 @@ jobs:
       - name: Build Project
         run: mvn clean install -DskipTests
 
-      # 5. Configurar o ChromeDriver
-      - name: Setup ChromeDriver
-        run: |
-          wget https://chromedriver.storage.googleapis.com/114.0.5735.90/chromedriver_linux64.zip
-          unzip chromedriver_linux64.zip
-          mv chromedriver /usr/local/bin/
-
       # 6. Executar os testes com o Chrome (headless)
       - name: Run tests with Chrome (headless)
-        env:
-          URL_HOM: ${{ secrets.URL_HOM }}
         run: mvn test -DENV=hmg-actions -DBROWSER=chrome-headless
 
       # 7. Upload do relatório HTML do Cucumber
