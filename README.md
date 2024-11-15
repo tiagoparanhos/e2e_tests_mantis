@@ -1,13 +1,16 @@
 # Execução do Projeto Local
 Para rodar este projeto, siga os passos abaixo:
 
-Instalar JDK 11 ou superior
+- Instalar JDK 11 ou superior
+
 Baixe e instale o JDK 11 ou superior em sua máquina. 
 
-Instalar Maven
+- Instalar Maven
+
 Baixe a versão mais recente do Maven. 
 
-Instalar a IDE
+- Instalar a IDE
+
 Baixe e instale a IDE de sua preferência para rodar o projeto. No meu caso, uso o VSCode.
 
 Clonar o Repositório
