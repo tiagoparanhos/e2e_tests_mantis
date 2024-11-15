@@ -34,8 +34,8 @@ mvn test -Dcucumber.filter.tags="@usesuatag"
 Executa apenas os testes que possuem determinada tag, permitindo rodar um subconjunto específico de testes baseados em tags.
 
 # Ferramentas Utilizadas
-Java
-JUnit
-Maven
-Selenium WebDriver
-Cucumber (BDD)/Gherkin
+- Java 
+- JUni
+- Maven
+- Selenium WebDriver
+- Cucumber (BDD)/Gherkin
