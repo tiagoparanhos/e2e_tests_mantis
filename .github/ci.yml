@@ -2,7 +2,7 @@ name: Pipe Selenium-Framework
 
 on:
   pull_request:
-    branches: [master]
+    branches: [main]
 
 jobs:
   tests-e2e:
