@@ -27,7 +27,7 @@ jobs:
       - name: Build Project
         run: mvn clean install -DskipTests
 
-      # 4. Instalar o Chrome e ChromeDriver
+      # 4. Instalar o Google Chrome e o ChromeDriver correto para Linux
       - name: Set up Google Chrome and ChromeDriver
         run: |
           sudo apt-get update
