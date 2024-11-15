@@ -1,0 +1,4 @@
+com\base2\stepDefinitions\new_task\NewTaskSteps.class
+com\base2\runners\RunCucumberTest.class
+com\base2\stepDefinitions\login\LoginSteps.class
+com\base2\stepDefinitions\Hooks.class

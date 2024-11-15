@@ -1,0 +1,4 @@
+com\base2\pages\LoginPage.class
+com\base2\utils\ConfigUtils.class
+com\base2\pages\NewTaskPage.class
+com\base2\utils\DriverManager.class

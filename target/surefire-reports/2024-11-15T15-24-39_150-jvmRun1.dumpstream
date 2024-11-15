@@ -1,0 +1,107 @@
+# Created at 2024-11-15T15:25:29.847
+TestSet has not finished before stream error has appeared >> initializing exit by non-null configuration: DEFAULT
+java.io.EOFException
+	at java.base/java.io.DataInputStream.readFully(DataInputStream.java:210)
+	at java.base/java.io.DataInputStream.readInt(DataInputStream.java:385)
+	at org.apache.maven.surefire.booter.MasterProcessCommand.decode(MasterProcessCommand.java:115)
+	at org.apache.maven.surefire.booter.CommandReader$CommandRunnable.run(CommandReader.java:391)
+	at java.base/java.lang.Thread.run(Thread.java:1575)
+
+
+# Created at 2024-11-15T15:25:34.347
+Unexpected IOException with stream:       [31morg.openqa.selenium.SessionNotCreatedException: Could not start a new session. Response code 500. Message: session not created: This version of ChromeDriver only supports Chrome version 114
+Current browser version is 130.0.6723.117 with binary path C:\Program Files\Google\Chrome\Application\chrome.exe 
+Host info: host: 'Tiger', ip: '192.168.100.89'
+Build info: version: '4.10.0', revision: 'c14d967899'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '23.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--remote-allow-origins=*], extensions: []}}]}]
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:140)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:96)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:68)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:163)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:196)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:171)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:531)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:227)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:154)
+	at org.openqa.selenium.chromium.ChromiumDriver.<init>(ChromiumDriver.java:107)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:87)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:82)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:50)
+	at com.base2.utils.DriverManager.getDriver(DriverManager.java:27)
+	at com.base2.stepDefinitions.new_task.NewTaskSteps.setUp(NewTaskSteps.java:22)
+[0m
+
+
+# Created at 2024-11-15T15:25:34.350
+Unexpected IOException with stream:   [36mGiven [0m[36mque o usuário está na página de login do Mantis[0m                    [90m# com.base2.stepDefinitions.login.LoginSteps.queOUsuarioEstaNaPaginaDeLoginDoMantis()[0m
+
+
+# Created at 2024-11-15T15:25:34.352
+Unexpected IOException with stream:   [36mWhen [0m[36mo usuário entra com o username e senha válidos[0m                      [90m# com.base2.stepDefinitions.login.LoginSteps.oUsuarioEntraComOUsernameESenhaValidos()[0m
+
+
+# Created at 2024-11-15T15:25:34.358
+Unexpected IOException with stream:   [36mAnd [0m[36mo usuário deve ser redirecionado para a página inicial do Mantis[0m     [90m# com.base2.stepDefinitions.login.LoginSteps.oUsuarioDeveVerOTextoNaPagina()[0m
+
+
+# Created at 2024-11-15T15:25:34.363
+Unexpected IOException with stream:   [36mGiven [0m[36mque o usuário está na página de criação de tarefa[0m                  [90m# com.base2.stepDefinitions.new_task.NewTaskSteps.queOUsuarioEstaNaPaginaDeCriacaoDeTarefa()[0m
+
+
+# Created at 2024-11-15T15:25:34.365
+Unexpected IOException with stream:   [36mAnd [0m[36mo usuário clica no botão de criar tarefa[0m                             [90m# com.base2.stepDefinitions.new_task.NewTaskSteps.oUsuarioClicaNoBotaoDeCriarTarefa()[0m
+
+
+# Created at 2024-11-15T15:25:34.367
+Unexpected IOException with stream:   [36mWhen [0m[36mo usuário insere o título da tarefa [0m[36m[1m"Nova Tarefa de Teste"[0m          [90m# com.base2.stepDefinitions.new_task.NewTaskSteps.oUsuarioInsereOTituloDaTarefa(java.lang.String)[0m
+
+
+# Created at 2024-11-15T15:25:34.369
+Unexpected IOException with stream:   [36mAnd [0m[36mo usuário insere a descrição [0m[36m[1m"Descrição de teste para a nova tarefa"[0m [90m# com.base2.stepDefinitions.new_task.NewTaskSteps.oUsuarioInsereADescricao(java.lang.String)[0m
+
+
+# Created at 2024-11-15T15:25:34.373
+Unexpected IOException with stream:   [36mAnd [0m[36mo usuário seleciona a categoria [0m[36m[1m"[Todos os Projetos] nova categoria"[0m [90m# com.base2.stepDefinitions.new_task.NewTaskSteps.oUsuarioSelecionaACategoria(java.lang.String)[0m
+
+
+# Created at 2024-11-15T15:25:34.381
+Unexpected IOException with stream:   [36mAnd [0m[36mo usuário deverá deslogar da página[0m                                  [90m# com.base2.stepDefinitions.login.LoginSteps.oUsuarioDeveraDeslogardaPagina()[0m
+
+
+# Created at 2024-11-15T15:25:34.386
+Unexpected IOException: 7,1,Criar nova tarefa no Mantis,Usu\00E1rio cria uma nova tarefa com sucesso(Criar nova tarefa no Mantis),null,Could not start a new session. Response code 500. Message: session not created: This version of ChromeDriver only supports Chrome version 114\000ACurrent browser version is 130.0.6723.117 with binary path C:\005CProgram Files\005CGoogle\005CChrome\005CApplication\005Cchrome.exe \000AHost info: host: 'Tiger'\002C ip: '192.168.100.89'\000ABuild info: version: '4.10.0'\002C revision: 'c14d967899'\000ASystem info: os.name: 'Windows 11'\002C os.arch: 'amd64'\002C os.version: '10.0'\002C java.version: '23.0.1'\000ADriver info: org.openqa.selenium.chrome.ChromeDriver\000ACommand: [null\002C newSession {capabilities=[Capabilities {browserName: chrome\002C goog:chromeOptions: {args: [--remote-allow-origins=*]\002C extensions: []}}]}],null,Could not start a new session. Response code 500. Message: session not created: This version of ChromeDriver only supports Chrome version 114\000ACurrent browser version is 130.0.6723.117 with binary path C:\005CProgram Files\005CGoogle\005CChrome\005CApplication\005Cchrome.exe \000AHost info: host: 'Tiger'\002C ip: '192.168.100.89'\000ABuild info: version: '4.10.0'\002C revision: 'c14d967899'\000ASystem info: os.name: 'Windows 11'\002C os.arch: 'amd64'\002C os.version: '10.0'\002C java.version: '23.0.1'\000ADriver info: org.openqa.selenium.chrome.ChromeDriver\000ACommand: [null\002C newSession {capabilities=[Capabilities {browserName: chrome\002C goog:chromeOptions: {args: [--remote-allow-origins=*]\002C extensions: []}}]}],Could not start a new session. Response code 500. Message: session not created: This version of ChromeDriver only supports Chrome version 114\000ACurrent browser version is 130.0.6723.117 with binary path C:\005CProgram Files\005CGoogle\005CChrome\005CApplication\005Cchrome.exe \000AHost info: host: 'Tiger'\002C ip: '192.168.100.89'\000ABuild info: version: '4.10.0'\002C revision: 'c14d967899'\000ASystem info: os.name: 'Windows 11'\002C os.arch: 'amd64'\002C os.version: '10.0'\002C java.version: '23.0.1'\000ADriver info: org.openqa.selenium.chrome.ChromeDriver\000ACommand: [null\002C newSession {capabilities=[Capabilities {browserName: chrome\002C goog:chromeOptions: {args: [--remote-allow-origins=*]\002C extensions: []}}]}],org.openqa.selenium.SessionNotCreatedException: \000ACould not start a new session. Response code 500. Message: session not created: This version of ChromeDriver only supports Chrome version 114\000ACurrent browser version is 130.0.6723.117 with binary path C:\005CProgram Files\005CGoogle\005CChrome\005CApplication\005Cchrome.exe \000AHost info: host: 'Tiger'\002C ip: '192.168.100.89'\000ABuild info: version: '4.10.0'\002C revision: 'c14d967899'\000ASystem info: os.name: 'Windows 11'\002C os.arch: 'amd64'\002C os.version: '10.0'\002C java.version: '23.0.1'\000ADriver info: org.openqa.selenium.chrome.ChromeDriver\000ACommand: [null\002C newSession {capabilities=[Capabilities {browserName: chrome\002C goog:chromeOptions: {args: [--remote-allow-origins=*]\002C extensions: []}}]}]\000A
+
+
+# Created at 2024-11-15T15:25:34.389
+Unexpected IOException: 7,1,Criar nova tarefa no Mantis,Usu\00E1rio cria uma nova tarefa com sucesso(Criar nova tarefa no Mantis),null,Could not start a new session. Response code 500. Message: session not created: This version of ChromeDriver only supports Chrome version 114\000ACurrent browser version is 130.0.6723.117 with binary path C:\005CProgram Files\005CGoogle\005CChrome\005CApplication\005Cchrome.exe \000AHost info: host: 'Tiger'\002C ip: '192.168.100.89'\000ABuild info: version: '4.10.0'\002C revision: 'c14d967899'\000ASystem info: os.name: 'Windows 11'\002C os.arch: 'amd64'\002C os.version: '10.0'\002C java.version: '23.0.1'\000ADriver info: org.openqa.selenium.chrome.ChromeDriver\000ACommand: [null\002C newSession {capabilities=[Capabilities {browserName: chrome\002C goog:chromeOptions: {args: [--remote-allow-origins=*]\002C extensions: []}}]}],null,Could not start a new session. Response code 500. Message: session not created: This version of ChromeDriver only supports Chrome version 114\000ACurrent browser version is 130.0.6723.117 with binary path C:\005CProgram Files\005CGoogle\005CChrome\005CApplication\005Cchrome.exe \000AHost info: host: 'Tiger'\002C ip: '192.168.100.89'\000ABuild info: version: '4.10.0'\002C revision: 'c14d967899'\000ASystem info: os.name: 'Windows 11'\002C os.arch: 'amd64'\002C os.version: '10.0'\002C java.version: '23.0.1'\000ADriver info: org.openqa.selenium.chrome.ChromeDriver\000ACommand: [null\002C newSession {capabilities=[Capabilities {browserName: chrome\002C goog:chromeOptions: {args: [--remote-allow-origins=*]\002C extensions: []}}]}],Could not start a new session. Response code 500. Message: session not created: This version of ChromeDriver only supports Chrome version 114\000ACurrent browser version is 130.0.6723.117 with binary path C:\005CProgram Files\005CGoogle\005CChrome\005CApplication\005Cchrome.exe \000AHost info: host: 'Tiger'\002C ip: '192.168.100.89'\000ABuild info: version: '4.10.0'\002C revision: 'c14d967899'\000ASystem info: os.name: 'Windows 11'\002C os.arch: 'amd64'\002C os.version: '10.0'\002C java.version: '23.0.1'\000ADriver info: org.openqa.selenium.chrome.ChromeDriver\000ACommand: [null\002C newSession {capabilities=[Capabilities {browserName: chrome\002C goog:chromeOptions: {args: [--remote-allow-origins=*]\002C extensions: []}}]}],org.openqa.selenium.SessionNotCreatedException: \000ACould not start a new session. Response code 500. Message: session not created: This version of ChromeDriver only supports Chrome version 114\000ACurrent browser version is 130.0.6723.117 with binary path C:\005CProgram Files\005CGoogle\005CChrome\005CApplication\005Cchrome.exe \000AHost info: host: 'Tiger'\002C ip: '192.168.100.89'\000ABuild info: version: '4.10.0'\002C revision: 'c14d967899'\000ASystem info: os.name: 'Windows 11'\002C os.arch: 'amd64'\002C os.version: '10.0'\002C java.version: '23.0.1'\000ADriver info: org.openqa.selenium.chrome.ChromeDriver\000ACommand: [null\002C newSession {capabilities=[Capabilities {browserName: chrome\002C goog:chromeOptions: {args: [--remote-allow-origins=*]\002C extensions: []}}]}]\000A
+
+
+# Created at 2024-11-15T15:25:34.391
+Unexpected IOException: 7,1,Criar nova tarefa no Mantis,Usu\00E1rio cria uma nova tarefa com sucesso(Criar nova tarefa no Mantis),null,Could not start a new session. Response code 500. Message: session not created: This version of ChromeDriver only supports Chrome version 114\000ACurrent browser version is 130.0.6723.117 with binary path C:\005CProgram Files\005CGoogle\005CChrome\005CApplication\005Cchrome.exe \000AHost info: host: 'Tiger'\002C ip: '192.168.100.89'\000ABuild info: version: '4.10.0'\002C revision: 'c14d967899'\000ASystem info: os.name: 'Windows 11'\002C os.arch: 'amd64'\002C os.version: '10.0'\002C java.version: '23.0.1'\000ADriver info: org.openqa.selenium.chrome.ChromeDriver\000ACommand: [null\002C newSession {capabilities=[Capabilities {browserName: chrome\002C goog:chromeOptions: {args: [--remote-allow-origins=*]\002C extensions: []}}]}],null,Could not start a new session. Response code 500. Message: session not created: This version of ChromeDriver only supports Chrome version 114\000ACurrent browser version is 130.0.6723.117 with binary path C:\005CProgram Files\005CGoogle\005CChrome\005CApplication\005Cchrome.exe \000AHost info: host: 'Tiger'\002C ip: '192.168.100.89'\000ABuild info: version: '4.10.0'\002C revision: 'c14d967899'\000ASystem info: os.name: 'Windows 11'\002C os.arch: 'amd64'\002C os.version: '10.0'\002C java.version: '23.0.1'\000ADriver info: org.openqa.selenium.chrome.ChromeDriver\000ACommand: [null\002C newSession {capabilities=[Capabilities {browserName: chrome\002C goog:chromeOptions: {args: [--remote-allow-origins=*]\002C extensions: []}}]}],Could not start a new session. Response code 500. Message: session not created: This version of ChromeDriver only supports Chrome version 114\000ACurrent browser version is 130.0.6723.117 with binary path C:\005CProgram Files\005CGoogle\005CChrome\005CApplication\005Cchrome.exe \000AHost info: host: 'Tiger'\002C ip: '192.168.100.89'\000ABuild info: version: '4.10.0'\002C revision: 'c14d967899'\000ASystem info: os.name: 'Windows 11'\002C os.arch: 'amd64'\002C os.version: '10.0'\002C java.version: '23.0.1'\000ADriver info: org.openqa.selenium.chrome.ChromeDriver\000ACommand: [null\002C newSession {capabilities=[Capabilities {browserName: chrome\002C goog:chromeOptions: {args: [--remote-allow-origins=*]\002C extensions: []}}]}],org.openqa.selenium.SessionNotCreatedException: \000ACould not start a new session. Response code 500. Message: session not created: This version of ChromeDriver only supports Chrome version 114\000ACurrent browser version is 130.0.6723.117 with binary path C:\005CProgram Files\005CGoogle\005CChrome\005CApplication\005Cchrome.exe \000AHost info: host: 'Tiger'\002C ip: '192.168.100.89'\000ABuild info: version: '4.10.0'\002C revision: 'c14d967899'\000ASystem info: os.name: 'Windows 11'\002C os.arch: 'amd64'\002C os.version: '10.0'\002C java.version: '23.0.1'\000ADriver info: org.openqa.selenium.chrome.ChromeDriver\000ACommand: [null\002C newSession {capabilities=[Capabilities {browserName: chrome\002C goog:chromeOptions: {args: [--remote-allow-origins=*]\002C extensions: []}}]}]\000A
+
+
+# Created at 2024-11-15T15:25:34.447
+Unexpected IOException with stream: [32m[1m┌───────────────────────────────────────────────────────────────────────────────────┐[0m
+[32m[1m│[0m Share your Cucumber Report with your team at [36m[1m[4mhttps://reports.cucumber.io[0m          [32m[1m│[0m
+[32m[1m│[0m Activate publishing with one of the following:                                    [32m[1m│[0m
+[32m[1m│[0m                                                                                   [32m[1m│[0m
+[32m[1m│[0m src/test/resources/cucumber.properties:          [36mcucumber.publish.enabled[0m=[36mtrue[0m    [32m[1m│[0m
+[32m[1m│[0m src/test/resources/junit-platform.properties:    [36mcucumber.publish.enabled[0m=[36mtrue[0m    [32m[1m│[0m
+[32m[1m│[0m Environment variable:                            [36mCUCUMBER_PUBLISH_ENABLED[0m=[36mtrue[0m    [32m[1m│[0m
+[32m[1m│[0m JUnit:                                           [36m@CucumberOptions[0m(publish = [36mtrue[0m) [32m[1m│[0m
+[32m[1m│[0m                                                                                   [32m[1m│[0m
+[32m[1m│[0m More information at [36mhttps://cucumber.io/docs/cucumber/environment-variables/[0m      [32m[1m│[0m
+[32m[1m│[0m                                                                                   [32m[1m│[0m
+[32m[1m│[0m Disable this message with one of the following:                                   [32m[1m│[0m
+[32m[1m│[0m                                                                                   [32m[1m│[0m
+[32m[1m│[0m src/test/resources/cucumber.properties:          [36mcucumber.publish.quiet[0m=[36mtrue[0m      [32m[1m│[0m
+[32m[1m│[0m src/test/resources/junit-platform.properties:    [36mcucumber.publish.quiet[0m=[36mtrue[0m      [32m[1m│[0m
+[32m[1m└───────────────────────────────────────────────────────────────────────────────────┘[0m
+
+
+# Created at 2024-11-15T15:25:34.448
+Unexpected IOException: 2,1,org.apache.maven.surefire.junit4.JUnit4Provider,com.base2.runners.RunCucumberTest,null,null,null
+
+

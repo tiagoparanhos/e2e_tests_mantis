@@ -3,36 +3,55 @@ name: Continuous Integration (CI)
 on:
   push:
     branches:
-      - main  
+      - main
   pull_request:
     branches:
-      - main 
+      - main
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
+      # Checkout do código
       - name: Checkout code
         uses: actions/checkout@v2
 
+      # Configura JDK 11
       - name: Set up JDK 11
         uses: actions/setup-java@v2
         with:
           java-version: '11'
-          distribution: 'temurin'  
+          distribution: 'temurin'
 
+      # Instala o Maven
       - name: Install Maven
         run: |
           sudo apt-get update
           sudo apt-get install -y maven
 
+      # Instala o ChromeDriver
+      - name: Install chromedriver
+        run: |
+          CHROMEDRIVER_VERSION=$(curl -sSL https://chromedriver.storage.googleapis.com/LATEST_RELEASE)
+          wget https://chromedriver.storage.googleapis.com/$CHROMEDRIVER_VERSION/chromedriver_linux64.zip
+          unzip chromedriver_linux64.zip
+          sudo mv chromedriver /usr/local/bin/chromedriver
+          sudo chmod +x /usr/local/bin/chromedriver
+
+      # Adiciona o chromedriver ao PATH
+      - name: Add chromedriver to PATH
+        run: echo "/usr/local/bin" >> $GITHUB_PATH
+
+      # Instala as dependências do Maven
       - name: Install dependencies
         run: mvn install -DskipTests=true
 
+      # Executa os testes do Cucumber
       - name: Run Cucumber Tests
         run: mvn test
 
+      # Faz o upload do relatório HTML do Cucumber
       - name: Upload Cucumber HTML Report
         uses: actions/upload-artifact@v3
         with:
