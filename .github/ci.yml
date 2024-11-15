@@ -3,38 +3,53 @@ name: Pipe Selenium-Framework
 on:
   push:
     branches:
-      - main
+      - main  # Executa o pipeline quando há push na branch main
   pull_request:
     branches:
-      - main
+      - main  # Executa o pipeline em pull requests para a branch main
 
 jobs:
   tests-e2e:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest  # Ambiente de execução
+
     steps:
+      # 1. Fazer o checkout do código
       - uses: actions/checkout@v3
 
+      # 2. Configurar o JDK
       - name: Set up JDK 11
         uses: actions/setup-java@v3
         with:
-          java-version: "11"
-          distribution: "adopt"
+          java-version: "11"  # Altere para a versão do JDK que você usa
+          distribution: "temurin"
 
+      # 3. Configurar o cache Maven para acelerar builds futuros
+      - name: Cache Maven dependencies
+        uses: actions/cache@v3
+        with:
+          path: ~/.m2/repository
+          key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
+          restore-keys: |
+            ${{ runner.os }}-maven-
+
+      # 4. Construir o projeto com Maven (sem rodar os testes nesta fase)
       - name: Build Project
         run: mvn clean install -DskipTests
 
+      # 5. Configurar o ChromeDriver
       - name: Setup ChromeDriver
         run: |
           wget https://chromedriver.storage.googleapis.com/114.0.5735.90/chromedriver_linux64.zip
           unzip chromedriver_linux64.zip
           mv chromedriver /usr/local/bin/
 
+      # 6. Executar os testes com o Chrome (headless)
       - name: Run tests with Chrome (headless)
-        if: always()
         env:
           URL_HOM: ${{ secrets.URL_HOM }}
         run: mvn test -DENV=hmg-actions -DBROWSER=chrome-headless
 
+      # 7. Upload do relatório HTML do Cucumber
       - name: Upload Cucumber HTML Report
         if: always()
         uses: actions/upload-artifact@v3
