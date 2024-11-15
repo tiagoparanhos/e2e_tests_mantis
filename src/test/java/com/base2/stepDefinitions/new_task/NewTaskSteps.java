@@ -9,7 +9,6 @@ import io.cucumber.java.pt.Quando;
 import io.cucumber.java.pt.Então;
 import io.cucumber.java.pt.E;
 import static org.junit.Assert.assertTrue;
-import static org.junit.Assert.fail;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
@@ -69,16 +68,6 @@ public class NewTaskSteps {
     @Então("deverá ser exibida uma mensagem de sucesso {string}")
     public void theTaskMessageShouldContain(String phrase) {
         String taskMessage = taskPage.getTaskMessage();
-
-        if (taskMessage.contains(phrase)) {
-            assertTrue("A mensagem de sucesso foi exibida corretamente.", true);
-        } else if (taskMessage.contains("3600 segundos")) {
-            System.out.println(
-                    "Requisição enviada, porém não gravada devido ao excesso de tentativas.");
-            assertTrue("O teste passou porque a requisição foi enviado e a mensagem de bloqueio foi exibida.", true);
-        } else {
-            fail("A mensagem esperada ou a mensagem de bloqueio não foram exibidas.");
-        }
+        assertTrue(taskMessage.contains(phrase));
     }
-
 }
