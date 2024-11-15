@@ -2,6 +2,7 @@ package com.base2.utils;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -12,12 +13,21 @@ public class DriverManager {
     private static final ThreadLocal<WebDriver> driverThreadLocal = new ThreadLocal<>();
     private static final String CONFIG_PATH = "src/test/resources/config/config.properties";
 
-    // Retorna o WebDriver associado à thread atual
     public static WebDriver getDriver() {
         if (driverThreadLocal.get() == null) {
+            String browser = System.getProperty("BROWSER", "chrome");
             String driverPath = new File("drivers/chromedriver.exe").getAbsolutePath();
             System.setProperty("webdriver.chrome.driver", driverPath);
-            WebDriver driver = new ChromeDriver();
+
+            ChromeOptions options = new ChromeOptions();
+
+            if ("chrome-headless".equalsIgnoreCase(browser)) {
+                options.addArguments("--headless");
+                options.addArguments("--no-sandbox");
+                options.addArguments("--disable-dev-shm-usage");
+            }
+
+            WebDriver driver = new ChromeDriver(options);
             driver.manage().window().maximize();
             driverThreadLocal.set(driver);
         }
@@ -27,7 +37,7 @@ public class DriverManager {
     public static void quitDriver() {
         if (driverThreadLocal.get() != null) {
             driverThreadLocal.get().quit();
-            driverThreadLocal.remove(); // Remove a instância associada à thread
+            driverThreadLocal.remove();
         }
     }
 

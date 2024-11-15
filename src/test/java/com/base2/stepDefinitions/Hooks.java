@@ -8,11 +8,11 @@ public class Hooks {
 
     @Before
     public void setUp() {
-        DriverManager.getDriver(); // Inicia o WebDriver para o cenário atual
+        DriverManager.getDriver(); 
     }
 
     @After
     public void tearDown() {
-        DriverManager.quitDriver(); // Encerra e limpa o WebDriver ao final do cenário
+        DriverManager.quitDriver();
     }
 }

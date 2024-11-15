@@ -1,8 +1,10 @@
-Feature: Login no sistema Mantis
+#language:pt
+
+Funcionalidade: Login no sistema Mantis
 
   @login @critical
-  Scenario: Login com sucesso
-    Given que o usuário está na página de login do Mantis
-    When o usuário entra com o username e senha válidos
-    And o usuário deve ser redirecionado para a página inicial do Mantis
-    Then o usuário deverá deslogar da página
+  Cenário:: Login com sucesso
+    Dado que o usuário está na página de login do Mantis
+    Quando o usuário entra com o username e senha válidos
+    E o usuário deve ser redirecionado para a página inicial do Mantis
+    Então o usuário deverá deslogar da página

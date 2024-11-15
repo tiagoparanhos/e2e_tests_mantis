@@ -16,19 +16,19 @@ public class NewTaskPage {
     private WebDriverWait wait;
 
     public NewTaskPage(WebDriver driver) {
-        this.wait = new WebDriverWait(driver, Duration.ofSeconds(2));
+        this.wait = new WebDriverWait(driver, Duration.ofSeconds(3));
         PageFactory.initElements(driver, this);
     }
 
-    @FindBy(name = "category_id") // Campo de categoria
+    @FindBy(name = "category_id")
     @CacheLookup
     private WebElement categoryDropdown;
 
-    @FindBy(name = "summary") // Campo de título da tarefa
+    @FindBy(name = "summary")
     @CacheLookup
     private WebElement summaryField;
 
-    @FindBy(name = "description") // Campo de descrição da tarefa
+    @FindBy(name = "description")
     @CacheLookup
     private WebElement descriptionField;
 
@@ -36,11 +36,11 @@ public class NewTaskPage {
     @CacheLookup
     public WebElement createTaskButton;
 
-    @FindBy(xpath = "//form//input[@value='Criar Nova Tarefa']") // Botão para criar a tarefa
+    @FindBy(xpath = "//form//input[@value='Criar Nova Tarefa']")
     @CacheLookup
     private WebElement submitButton;
 
-    @FindBy(xpath = "//td[@class='column-summary']") // Element for task title
+    @FindBy(xpath = "//td[@class='column-summary']")
     @CacheLookup
     private WebElement taskTitle;
 
@@ -48,26 +48,22 @@ public class NewTaskPage {
     @CacheLookup
     private WebElement sucesseMessage;
 
-    // Insere o título da tarefa
     public void enterTaskTitle(String title) {
         wait.until(ExpectedConditions.visibilityOf(summaryField));
         summaryField.sendKeys(title);
     }
 
-    // Insere a descrição da tarefa
     public void enterTaskDescription(String description) {
         wait.until(ExpectedConditions.visibilityOf(descriptionField));
         descriptionField.sendKeys(description);
     }
 
-    // Seleciona uma categoria da lista suspensa
     public void selectTaskCategory(String category) {
         wait.until(ExpectedConditions.visibilityOf(categoryDropdown));
         Select dropdown = new Select(categoryDropdown);
         dropdown.selectByVisibleText(category);
     }
 
-    // Clica no botão para criar a tarefa
     public void clickCreateTaskButton() {
         wait.until(ExpectedConditions.elementToBeClickable(submitButton));
         submitButton.click();
@@ -84,8 +80,9 @@ public class NewTaskPage {
         return taskTitle.getText().contains(phrase);
     }
 
-    public boolean doesTaskMessageContain(String phrase) {
+    public String getTaskMessage() {
         wait.until(ExpectedConditions.visibilityOf(sucesseMessage));
-        return sucesseMessage.getText().contains(phrase);
+        return sucesseMessage.getText();
     }
+
 }
