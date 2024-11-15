@@ -29,10 +29,12 @@ jobs:
 
       # 4. Usar uma ação do GitHub para configurar o ChromeDriver
       - name: Set up ChromeDriver
-        uses: actions/setup-chrome-driver@v1  # Ação que configura o ChromeDriver
+        uses: browser-actions/setup-chromedriver@v2  # Ação correta para configurar o ChromeDriver
 
       # 5. Executar os testes com Chrome (headless)
       - name: Run tests with Chrome (headless)
+        env:
+          URL_HOM: ${{ secrets.URL_HOM }}
         run: mvn test -DENV=hmg-actions -DBROWSER=chrome-headless
 
       # 6. Upload do relatório HTML do Cucumber
