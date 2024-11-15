@@ -74,8 +74,8 @@ public class NewTaskSteps {
             assertTrue("A mensagem de sucesso foi exibida corretamente.", true);
         } else if (taskMessage.contains("3600 segundos")) {
             System.out.println(
-                    "Requisição enviada, porém não gravada devido ao excesso de tentativas. A operação caiu no bloqueio de spam.");
-            assertTrue("O teste passou porque a mensagem de bloqueio foi exibida.", true);
+                    "Requisição enviada, porém não gravada devido ao excesso de tentativas.");
+            assertTrue("O teste passou porque a requisição foi enviado e a mensagem de bloqueio foi exibida.", true);
         } else {
             fail("A mensagem esperada ou a mensagem de bloqueio não foram exibidas.");
         }
