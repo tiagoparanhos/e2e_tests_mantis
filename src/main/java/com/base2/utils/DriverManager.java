@@ -2,6 +2,7 @@ package com.base2.utils;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
@@ -14,24 +15,11 @@ public class DriverManager {
     // Retorna o WebDriver associado à thread atual
     public static WebDriver getDriver() {
         if (driverThreadLocal.get() == null) {
-            try {
-                // Carrega as propriedades de configuração
-                Properties properties = new Properties();
-                properties.load(new FileInputStream(CONFIG_PATH));
-
-                // Configura o caminho do WebDriver
-                System.setProperty("webdriver.chrome.driver", properties.getProperty("driver.path"));
-
-                // Cria uma nova instância do WebDriver para a thread atual
-                WebDriver driver = new ChromeDriver();
-                driver.manage().window().maximize();
-
-                // Armazena o WebDriver na ThreadLocal
-                driverThreadLocal.set(driver);
-            } catch (IOException e) {
-                e.printStackTrace();
-                throw new RuntimeException("Falha ao carregar o arquivo de configuração");
-            }
+            String driverPath = new File("drivers/chromedriver.exe").getAbsolutePath();
+            System.setProperty("webdriver.chrome.driver", driverPath);
+            WebDriver driver = new ChromeDriver();
+            driver.manage().window().maximize();
+            driverThreadLocal.set(driver);
         }
         return driverThreadLocal.get();
     }
