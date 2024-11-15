@@ -36,7 +36,6 @@ public class DriverManager {
         return driverThreadLocal.get();
     }
 
-    // Finaliza o WebDriver e remove-o da ThreadLocal
     public static void quitDriver() {
         if (driverThreadLocal.get() != null) {
             driverThreadLocal.get().quit();
