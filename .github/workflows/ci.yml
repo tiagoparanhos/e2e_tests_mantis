@@ -21,12 +21,11 @@ jobs:
         with:
           java-version: '11'
           distribution: 'temurin'  
-          
-      - name: Set up Maven
-        uses: actions/setup-java@v2
-        with:
-          java-version: '11' 
-          maven-version: '3.8.1'
+
+      - name: Install Maven
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y maven
 
       - name: Install dependencies
         run: mvn install -DskipTests=true
