@@ -14,7 +14,7 @@ Baixe a versão mais recente do Maven.
 Baixe e instale a IDE de sua preferência para rodar o projeto. No meu caso, uso o VSCode.
 
 Clonar o Repositório
-git clone https://github.com/tiagoparanhos/mantis_e2e_test.git
+git clone https://github.com/tiagoparanhos/e2e_tests_mantis
 
 # Parâmetros de Execução
 Para passar parâmetros, use o prefixo -D seguido do nome do parâmetro. Exemplos:
