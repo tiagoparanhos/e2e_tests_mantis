@@ -10,7 +10,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest 
+    runs-on: ubuntu-latest
 
     steps:
     - name: Checkout repository
@@ -23,12 +23,15 @@ jobs:
 
     - name: Copy ChromeDriver for Linux
       run: |
-        cp drivers/chromedriver_linux64 drivers/chromedriver_linux64
-        chmod +x drivers/chromedriver  
+        # Copia o ChromeDriver para o arquivo executável
+        cp drivers/chromedriver_linux64 drivers/chromedriver
+        # Garante que o chromedriver tenha permissão de execução
+        chmod +x drivers/chromedriver
 
     - name: Set up ChromeDriver path for testing
       run: |
-        echo "CHROMEDRIVER_PATH=drivers/chromedriver_linux64" >> $GITHUB_ENV
+        # Define o caminho do ChromeDriver no ambiente
+        echo "CHROMEDRIVER_PATH=drivers/chromedriver" >> $GITHUB_ENV
 
     - name: Build with Maven
       run: mvn -B package --file pom.xml
