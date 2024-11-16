@@ -3,9 +3,9 @@ package com.base2.utils;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.nio.file.Paths;
 import java.util.Properties;
 
 public class DriverManager {
@@ -16,7 +16,15 @@ public class DriverManager {
     public static WebDriver getDriver() {
         if (driverThreadLocal.get() == null) {
             String browser = System.getProperty("BROWSER", "chrome");
-            String driverPath = new File("drivers/chromedriver.exe").getAbsolutePath();
+            String os = System.getProperty("os.name").toLowerCase();
+            String driverPath;
+
+            if (os.contains("win")) {
+                driverPath = Paths.get("drivers", "chromedriver.exe").toAbsolutePath().toString();
+            } else {
+                driverPath = Paths.get("drivers", "chromedriver").toAbsolutePath().toString();
+            }
+
             System.setProperty("webdriver.chrome.driver", driverPath);
 
             ChromeOptions options = new ChromeOptions();
