@@ -22,7 +22,7 @@ public class DriverManager {
             if (os.contains("win")) {
                 driverPath = Paths.get("drivers", "chromedriver.exe").toAbsolutePath().toString();
             } else {
-                driverPath = Paths.get("drivers", "chromedriver").toAbsolutePath().toString();
+                driverPath = Paths.get("drivers", "chromedriver_linux64").toAbsolutePath().toString();
             }
 
             System.setProperty("webdriver.chrome.driver", driverPath);
