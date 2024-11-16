@@ -1,10 +1,13 @@
-name: Selenium Java CI
+
+name: Java CI 
 
 on:
   push:
-    branches: [ main ]
+    branches:
+      - main
   pull_request:
-    branches: [ main ]
+    branches: 
+      - main
 
 jobs:
   build:
@@ -12,25 +15,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # 1. Checkout do código
-      - uses: actions/checkout@v4
-
-      # 2. Configurar o JDK 11
-      - name: Set up JDK 11
-        uses: actions/setup-java@v4
-        with:
-          distribution: 'zulu'
-          java-version: 11
-
-      # 3. Instalar o Google Chrome
-      - name: Install Google Chrome
-        run: |
-          chmod +x ./script/install_chrome.sh
-          ./script/install_chrome.sh
-
-      # 4. Construa o projeto com Maven
-      - name: Build with Maven
-        run: mvn clean install -DskipTests
-
-      - name: Run Critical Tests with Maven
-        run: mvn test 
+    - uses: actions/checkout@v2
+    - name: Set up JDK 11
+      uses: actions/setup-java@v1.4.3
+      with:
+        java-version: 11
+    - name: Build with Maven
+      run: mvn -B package --file pom.xml
