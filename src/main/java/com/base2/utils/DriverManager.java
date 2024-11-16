@@ -25,7 +25,10 @@ public class DriverManager {
                 driverPath = Paths.get("drivers", "chromedriver_linux64").toAbsolutePath().toString();
             }
 
-            System.setProperty("webdriver.chrome.driver", driverPath);
+            String path = System.getenv("CHROMEDRIVER_PATH");
+            if (!path.contains(driverPath)) {
+                System.setProperty("webdriver.chrome.driver", driverPath);
+            }
 
             ChromeOptions options = new ChromeOptions();
 
