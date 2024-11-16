@@ -24,7 +24,7 @@ jobs:
     - name: Copy ChromeDriver for Linux
       run: |
         # Copia o ChromeDriver para o arquivo executável
-        cp drivers/chromedriver_linux64 drivers/chromedriver
+        cp drivers/chromedriver drivers
         # Garante que o chromedriver tenha permissão de execução
         chmod +x drivers/chromedriver
 
